@@ -1,5 +1,10 @@
 export const State = {
   products: [],
   types: [],
-  categories: []
+  categories: [],
+  filter: {
+    categoryType: null,
+    filterType: null,
+    ascending: true,
+  }
 }

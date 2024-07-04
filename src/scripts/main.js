@@ -1,4 +1,5 @@
 import { Menu } from "../components/menu/menu.js";
+import { Products } from "../components/products/products.js";
 import { State } from "./state.js";
 
 async function fetchData() {
@@ -20,10 +21,12 @@ async function fetchData() {
 async function init() {
   await setStateData();
 
-  Menu.setMenu(State);
+  Menu.load(State);
+  Products.load(State.products);
+
 }
 
-init()
+init();
 
 
 async function setStateData() {

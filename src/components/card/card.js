@@ -4,12 +4,13 @@ export const Card = {
 
 Card.create = (item) => {
   const card = document.createElement("div");
+  card.id = item.id;
   card.classList.add("card");
 
   const name = document.createElement("span");
   name.classList.add("name");
   name.textContent = item.name;
-  card.appendChild("name");
+  card.appendChild(name);
 
   const image = document.createElement("img");
   image.src = `src/assets/images/${item.image}.png`;

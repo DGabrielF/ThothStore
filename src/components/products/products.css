@@ -1,0 +1,19 @@
+.products_area {
+  width: 98%;
+  height: 98%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.products {
+  width: 100%;
+  height: 98%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}

@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "id": "bbpma",
       "name": "Mochila de Boxeadora",
       "type": "mochila",
       "category": "acessórios",
@@ -8,6 +9,7 @@
       "image": "boxerBackpack"
     },
     {
+      "id": "cdgpcc",
       "name": "Capinha de Gato Preto",
       "type": "capinha",
       "category": "celular",

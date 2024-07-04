@@ -1,10 +1,10 @@
 export const Menu = {
   self: document.querySelector("div.menu"),
-  setMenu: () => {},
+  load: () => {},
   toggleTypes: () => {},
 }
 
-Menu.setMenu = (state) => {
+Menu.load = (state) => {
   for (const category of state.categories) {
     const categoryDiv = document.createElement("div");
     categoryDiv.classList.add("category");
