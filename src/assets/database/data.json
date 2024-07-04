@@ -6,7 +6,12 @@
       "type": "mochila",
       "category": "acessórios",
       "link": "https://www.redbubble.com/i/backpack/Boxer-Ready-to-Fight-by-DGabrielF/162463755.K1KHE",
-      "image": "boxerBackpack"
+      "image": "boxerBackpack",
+      "size": {
+        "height": 43,
+        "width": 31,
+        "depth": 12
+      }
     },
     {
       "id": "cdgpcc",
@@ -15,6 +20,22 @@
       "category": "celular",
       "link": "https://www.redbubble.com/i/samsung-case/Black-Cat-with-Green-Eyes-by-DGabrielF/162189462.BW6FM",
       "image": "blackCatPhoneCase"
+    },
+    {
+      "id": "cdgpcu",
+      "name": "Caneca de Gato Preto",
+      "type": "caneca",
+      "category": "utensílios",
+      "link": "https://www.redbubble.com/i/mug/Black-Cat-with-Green-Eyes-by-DGabrielF/162189462.9Q0AD",
+      "image": "blackCatCup"
+    },
+    {
+      "id":"cdccr",
+      "name": "Camisa de Cacto",
+      "type": "camisa",
+      "category": "roupa",
+      "link": "https://www.redbubble.com/i/t-shirt/Palma-Cactus-by-DGabrielF/162157850.ADAKE",
+      "image": "palmaCactusTShirt"
     }
   ],
   "types": [

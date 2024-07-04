@@ -22,7 +22,7 @@ Card.create = (item) => {
   card.appendChild(buttonArea);
   
   const buyButton = document.createElement("button");
-  buyButton.addEventListener("click", e => buy(e));
+  buyButton.addEventListener("click", e => buy(e, item.link));
   buyButton.textContent = "comprar";
   buttonArea.appendChild(buyButton);
   
@@ -34,8 +34,9 @@ Card.create = (item) => {
   return card;
 }
 
-function buy(event) {
+function buy(event, link) {
   console.log(event.target, "comprar")
+  window.open(link, "_blank");
 }
 
 function toggleDetail(event) {
