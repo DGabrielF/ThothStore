@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "name": "Mochila de Boxeadora",
+      "type": "mochila",
+      "category": "acessórios",
+      "link": "https://www.redbubble.com/i/backpack/Boxer-Ready-to-Fight-by-DGabrielF/162463755.K1KHE",
+      "image": "boxerBackpack"
+    },
+    {
+      "name": "Capinha de Gato Preto",
+      "type": "capinha",
+      "category": "celular",
+      "link": "https://www.redbubble.com/i/samsung-case/Black-Cat-with-Green-Eyes-by-DGabrielF/162189462.BW6FM",
+      "image": "blackCatPhoneCase"
+    }
+  ],
+  "types": [
+    {
+      "name": "mochila",
+      "category": "acessórios"
+    },
+    {
+      "name": "capinha",
+      "category": "celular"
+    }
+  ],
+  "categories": [
+    {
+      "name": "acessórios"
+    },
+    {
+      "name": "celular"
+    }
+  ]
+}
