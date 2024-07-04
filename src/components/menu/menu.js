@@ -14,14 +14,21 @@ Menu.setMenu = (state) => {
     categoryButton.addEventListener("click", e => toggleTypes(e))
     categoryDiv.appendChild(categoryButton);
 
+    
     const typeDiv = document.createElement("div");
     typeDiv.classList.add("type");
+    typeDiv.classList.add("hide");
     categoryDiv.appendChild(typeDiv);
+
+    const separator = document.createElement("div");
+    separator.classList.add("horizontal_separator");
+    typeDiv.appendChild(separator)
 
     for (const type of state.types) {
       if (type.category === category.name) {
         const typeButton = document.createElement("button");
         typeButton.textContent = type.name;
+        typeButton.addEventListener("click", e => filterContent(e))
         typeDiv.appendChild(typeButton);
       }
     }
@@ -38,4 +45,8 @@ function toggleTypes(event) {
   } else {
     typeDiv.classList.add("hide");
   }
+}
+
+function filterContent(event) {
+
 }
