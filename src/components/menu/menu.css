@@ -1,0 +1,23 @@
+.menu {
+  width: 140px;
+  height: 100%;
+
+  background-color: red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.category {
+  padding: 2px 0;
+  width: 100%;
+
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  background-color: #00ffff99;
+}
