@@ -31,6 +31,22 @@ Card.create = (item) => {
   detailButton.textContent = "detalhes";
   buttonArea.appendChild(detailButton);
 
+  const detailArea = document.createElement("div");
+  detailArea.classList.add("detail_area");
+  card.appendChild(detailArea);
+
+  const detail = {};
+
+  detail.name = document.createElement("span");
+  detail.name.classList.add("name");
+  detail.name.textContent = item.name;
+
+  if (item.details) {
+    for (const detail in item.details) {
+      // console.log(detail)
+      
+    }
+  }
   return card;
 }
 

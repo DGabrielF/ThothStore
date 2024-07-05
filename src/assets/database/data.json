@@ -7,10 +7,15 @@
       "category": "acessórios",
       "link": "https://www.redbubble.com/i/backpack/Boxer-Ready-to-Fight-by-DGabrielF/162463755.K1KHE",
       "image": "boxerBackpack",
-      "size": {
-        "height": 43,
-        "width": 31,
-        "depth": 12
+      "description": "Mochila de costas com suporte interno para notebook",
+      "details": {
+        "altura": 43,
+        "largura": 31,
+        "profundidade": 12,
+        "peso": null,
+        "material": null,
+        "tamanhos": [],
+        "modelos": []
       }
     },
     {
@@ -27,7 +32,17 @@
       "type": "caneca",
       "category": "utensílios",
       "link": "https://www.redbubble.com/i/mug/Black-Cat-with-Green-Eyes-by-DGabrielF/162189462.9Q0AD",
-      "image": "blackCatCup"
+      "image": "blackCatCup",
+      "description": "Caneca branca com estampa de Gato",
+      "details": {
+        "altura": null,
+        "largura": null,
+        "profundidade": null,
+        "peso": null,
+        "material": null,
+        "tamanhos": [],
+        "modelos": []
+      }
     },
     {
       "id":"cdccr",
@@ -46,6 +61,14 @@
     {
       "name": "capinha",
       "category": "celular"
+    },
+    {
+      "name": "camisa",
+      "category": "roupa"
+    },
+    {
+      "name": "caneca",
+      "category": "utensílios"
     }
   ],
   "categories": [
@@ -54,6 +77,12 @@
     },
     {
       "name": "celular"
+    },
+    {
+      "name": "roupa"
+    },
+    {
+      "name": "utensílios"
     }
   ]
 }
