@@ -1,6 +1,8 @@
 @import url("../components/menu/menu.css");
 @import url("../components/products/products.css");
 @import url("../components/card/card.css");
+@import url("../components/login/login.css");
+@import url("../components/fade/fade.css");
 
 * {
   padding: 0;
