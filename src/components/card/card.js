@@ -7,6 +7,20 @@ Card.create = (item) => {
   card.id = item.id;
   card.classList.add("card");
 
+  const edit = document.createElement("img");
+  edit.classList.add("edit");
+  edit.classList.add("icon");
+  edit.src = "src/assets/icons/edit.svg"
+  edit.alt = "editar produto"
+  card.appendChild(edit);
+
+  const remove = document.createElement("img");
+  remove.classList.add("remove");
+  remove.classList.add("icon");
+  remove.src = "src/assets/icons/trash.svg"
+  remove.alt = "remover produto"
+  card.appendChild(remove);
+
   const name = document.createElement("span");
   name.classList.add("name");
   name.textContent = item.name;
