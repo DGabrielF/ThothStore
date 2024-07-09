@@ -1,3 +1,4 @@
+import { Add } from "../components/add/add.js";
 import { Login } from "../components/login/login.js";
 import { Menu } from "../components/menu/menu.js";
 import { Products } from "../components/products/products.js";
@@ -11,6 +12,7 @@ async function init() {
   Menu.load();
   Products.load();
   Login.load();
+  Add.load();
 
   // document.body.addEventListener("click", () => console.log(State))
 }

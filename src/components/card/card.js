@@ -1,3 +1,5 @@
+import { State } from "../../scripts/state.js";
+
 export const Card = {
   create: () => {},
 }
@@ -10,6 +12,9 @@ Card.create = (item) => {
   const edit = document.createElement("img");
   edit.classList.add("edit");
   edit.classList.add("icon");
+  if (!State.user.auth) {
+    edit.classList.add("hide")
+  }
   edit.src = "src/assets/icons/edit.svg"
   edit.alt = "editar produto"
   card.appendChild(edit);
@@ -17,6 +22,9 @@ Card.create = (item) => {
   const remove = document.createElement("img");
   remove.classList.add("remove");
   remove.classList.add("icon");
+  if (!State.user.auth) {
+    remove.classList.add("hide")
+  }
   remove.src = "src/assets/icons/trash.svg"
   remove.alt = "remover produto"
   card.appendChild(remove);

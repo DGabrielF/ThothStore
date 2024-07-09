@@ -3,15 +3,12 @@
 @import url("../components/card/card.css");
 @import url("../components/login/login.css");
 @import url("../components/fade/fade.css");
+@import url("../components/add/add.css");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-*.hide {
-  display: none;
 }
 
 body {
@@ -87,4 +84,8 @@ body {
 .icon {
   width: 25px;
   height: 25px;
+}
+
+*.hide {
+  display: none;
 }

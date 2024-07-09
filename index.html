@@ -41,9 +41,58 @@
       </div>
     </div>
   </div>
-  <div class="add_product">
+  <div class="add_product hide">
     <span>Adicionar produto</span>
-    <img src="src/assets/icons/plus.svg" class="icon" alt="Adicionar produto">
+    <img id="add_product" src="src/assets/icons/plus.svg" class="icon" alt="Adicionar produto">
+  </div>
+  <div class="add_area">
+    <h1>Adicionar produto</h1>
+    <div class="inputs">
+      <input type="text" class="name" placeholder="nome do produto">
+      <input type="text" class="type" placeholder="tipo de produto">
+      <input type="text" class="category" placeholder="categoria do produto">
+      <input type="text" class="link" placeholder="link externo para venda">
+      <input type="file" class="image" multiple required>
+      <input type="text" class="description" placeholder="descrição do produto">
+    </div>
+    <div class="detail_input_area">
+      <span class="product_details"></span>
+      <input type="text" class="altura" placeholder="altura">
+      <input type="text" class="largura" placeholder="largura">
+      <input type="text" class="profundidade" placeholder="profundidade">
+      <input type="text" class="peso" placeholder="peso">
+      <span>tamanhos</span>
+      <div class="sizes">
+        <div class="size_pp">
+          <label for="">PP</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+        <div class="size_p">
+          <label for="">P</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+        <div class="size_m">
+          <label for="">M</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+        <div class="size_g">
+          <label for="">G</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+        <div class="size_gg">
+          <label for="">GG</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+        <div class="size_xg">
+          <label for="">XG</label>
+          <input type="checkbox" class="tamanho">
+        </div>
+      </div>
+      <span>modelos</span>
+      <input type="text" class="modelo">
+      <img id="add_model" src="src/assets/icons/plus.svg" class="icon">
+    </div>
+    <button class="add_button">adicionar</button>
   </div>
   <script type="module" src="src/scripts/main.js"></script>
 </body>

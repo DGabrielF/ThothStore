@@ -1,5 +1,5 @@
 import { FireAuth } from "../../scripts/firebase/fireauth.js";
-import { Firestore } from "../../scripts/firebase/firestore.js";
+import { State } from "../../scripts/state.js";
 import { Fade } from "../fade/fade.js";
 
 export const Login = {
@@ -39,7 +39,24 @@ Login.enter = async () => {
   if (typeof response === "string") {
     console.log(response)
   } else {
-    console.log("fazer aparecer os icones de editar e excluir produtos e os botões de adicionar produto e de fazer logout");
-    Login.close()
+    const editButtons = document.querySelectorAll(".card img.edit.icon");
+    for (const editButton of editButtons) {
+      editButton.classList.remove("hide");
+    }
+
+    const removeButtons = document.querySelectorAll(".card img.remove.icon");
+    for (const removeButton of removeButtons) {
+      removeButton.classList.remove("hide");
+    }
+
+    const addProductButton = document.querySelector("div.add_product");
+    addProductButton.classList.remove("hide");
+    
+    const loginButton = document.querySelector("button.login");
+    loginButton.classList.add("hide");
+
+    State.user.auth = true;
+    
+    Login.close();
   }
 }

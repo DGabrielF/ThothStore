@@ -1,4 +1,7 @@
 export const State = {
+  user: {
+    auth: false
+  },
   data: {
     products: [],
     types: [],
