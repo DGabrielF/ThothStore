@@ -15,17 +15,6 @@
   overflow: hidden;
 }
 
-.card img.remove {
-  padding: 2px;
-
-  border-radius: 50%;
-  background-color: #ff8181;
-
-  position: absolute;
-  top: 15px;
-  right: 5px;
-}
-
 .card img.edit {
   padding: 2px;
 
@@ -33,7 +22,18 @@
   background-color: #81bcff;
   position: absolute;
   top: 15px;
-  right: 45px;
+  right: 5px;
+}
+
+.card img.remove {
+  padding: 2px;
+
+  border-radius: 50%;
+  background-color: #ff8181;
+
+  position: absolute;
+  top: 50px;
+  right: 5px;
 }
 
 .card span.name {

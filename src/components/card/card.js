@@ -1,4 +1,6 @@
+import { Firestore } from "../../scripts/firebase/firestore.js";
 import { State } from "../../scripts/state.js";
+import { Edit } from "../edit/edit.js";
 
 export const Card = {
   create: () => {},
@@ -15,8 +17,9 @@ Card.create = (item) => {
   if (!State.user.auth) {
     edit.classList.add("hide")
   }
-  edit.src = "src/assets/icons/edit.svg"
-  edit.alt = "editar produto"
+  edit.src = "src/assets/icons/edit.svg";
+  edit.alt = "editar produto";
+  edit.addEventListener("click", async () => Edit.open(item))
   card.appendChild(edit);
 
   const remove = document.createElement("img");
@@ -25,8 +28,9 @@ Card.create = (item) => {
   if (!State.user.auth) {
     remove.classList.add("hide")
   }
-  remove.src = "src/assets/icons/trash.svg"
-  remove.alt = "remover produto"
+  remove.src = "src/assets/icons/trash.svg";
+  remove.alt = "remover produto";
+  remove.addEventListener("click", async () => Card.remove(item.id))
   card.appendChild(remove);
 
   const name = document.createElement("span");
@@ -79,4 +83,20 @@ function buy(event, link) {
 
 function toggleDetail(event) {
   console.log(event.target, "detalhes")
+}
+
+Card.remove = async (productId) => {
+  console.log("abrir uma caixa de diálogo rápida para a exclusão do item")
+  console.log(`apresentar os dados do produto com o id ${productId} a serem excluídos`)
+  console.log("botão pra confirmar")
+  console.log("botão pra cancelar")
+  console.log("remover os dados do firestore")
+  const productResponse = await Firestore.delete("products", productId);
+
+  if (typeof productResponse === "string") {
+    console.error(productResponse);
+  } else {
+    console.log(productResponse);
+  }
+  console.log("remover os dados do firestorage")
 }

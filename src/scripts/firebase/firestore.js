@@ -1,4 +1,4 @@
-import { getFirestore, doc, addDoc, getDoc, getDocs, setDoc, deleteDoc, collection, query, limit, startAfter, updateDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getFirestore, doc, addDoc, getDoc, getDocs, setDoc, deleteDoc, collection, query, where, limit, startAfter, updateDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 import { app } from "./fireapp.js"
 import { firebaseErrorMessage } from './errors.js';
@@ -7,6 +7,7 @@ const db = getFirestore(app)
 
 export const Firestore = {
   create: async () => {},
+  createIfNotExists: async () => {},
   fetch: async () => {},
   limitedFetch: async () => {},
   update: async () => {},
@@ -18,6 +19,17 @@ Firestore.create = async (collectionName, data) => {
     const collectionRef = collection(db, collectionName);
     const documentRef = await addDoc(collectionRef, data);
     return documentRef;
+  } catch (error) {
+    return firebaseErrorMessage[error.message] || error.message;
+  }
+}
+
+Firestore.checkIfExists = async (collectionName, data, criteria) => {
+  try {
+    const collectionRef = collection(db, collectionName);
+    const q = query(collectionRef, where(criteria, "==", data[criteria]));
+    const snapshot = await getDocs(q);
+    return (snapshot.empty) ? null : snapshot
   } catch (error) {
     return firebaseErrorMessage[error.message] || error.message;
   }

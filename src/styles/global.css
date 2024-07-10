@@ -4,6 +4,7 @@
 @import url("../components/login/login.css");
 @import url("../components/fade/fade.css");
 @import url("../components/add/add.css");
+@import url("../components/edit/edit.css");
 
 * {
   padding: 0;

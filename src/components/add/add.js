@@ -7,8 +7,14 @@ export const Add = {
 };
 
 Add.load = () => {
+  const toggleButton = document.querySelector("div.add_product");
+  toggleButton.addEventListener("click", toggleArea)
+
   const addButton = Add.self.querySelector("button.add_button");
-  addButton.addEventListener("click", () => send());
+  addButton.addEventListener("click", send);
+
+  const closeButton = Add.self.querySelector("button.close");
+  closeButton.addEventListener("click", toggleArea);
 }
 
 async function send() {
@@ -17,7 +23,7 @@ async function send() {
   const productCategory = Add.self.querySelector("input.category").value;
   const productLink = Add.self.querySelector("input.link").value;
 
-  const productImages = Add.self.querySelector("input.name").files;
+  const productImages = Add.self.querySelector("input.image").files;
   const productImagesUrls = await Firestorage.uploadImages(productImages);
 
   const productDescription = Add.self.querySelector("input.description").value;
@@ -53,4 +59,53 @@ async function send() {
   } else {
     console.log(productResponse);
   }
+
+  const typeData = {
+    name: productType,
+    category: productCategory,
+    count: 1
+  }
+
+  const typeResponse = await Firestore.checkIfExists("types", typeData, "name");
+  if (!typeResponse) {
+    Firestore.create("types", typeData)
+  } else {
+    if (typeof typeResponse !== "string") {
+      typeResponse.forEach(async (docSnap) => {
+        Firestore.update("types", docSnap.id,{
+          count: increment(1),
+        } )
+      })
+    } else {
+      console.error(typeResponse)
+    }
+  }
+
+  const categoriesData = {
+    name: productCategory,
+    count: 1
+  }
+
+  const categoriesResponse = await Firestore.checkIfExists("categories", categoriesData, "name");
+  if (!typeResponse) {
+    Firestore.create("categories", categoriesData)
+  } else {
+    if (typeof typeResponse !== "string") {
+      categoriesResponse.forEach(async (docSnap) => {
+        Firestore.update("categories", docSnap.id,{
+          count: increment(1),
+        } )
+      })
+    } else {
+      console.error(categoriesResponse)
+    }
+  }  
 };
+
+function toggleArea() {
+  if (Add.self.classList.contains("hide")) {
+    Add.self.classList.remove("hide")
+  } else {
+    Add.self.classList.add("hide")
+  }
+}
