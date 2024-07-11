@@ -56,10 +56,10 @@
       <input type="text" class="description" placeholder="descrição do produto">
     </div>
     <div class="detail_input_area">
-      <input type="text" class="altura" placeholder="altura">
-      <input type="text" class="largura" placeholder="largura">
-      <input type="text" class="profundidade" placeholder="profundidade">
-      <input type="text" class="peso" placeholder="peso">
+      <input type="text" class="height" placeholder="altura">
+      <input type="text" class="width" placeholder="largura">
+      <input type="text" class="depth" placeholder="profundidade">
+      <input type="text" class="weight" placeholder="peso">
       <input type="text" class="volume" placeholder="volume">
       <span>tamanhos</span>
       <div class="sizes">
@@ -105,45 +105,42 @@
       <input type="text" class="category" placeholder="categoria do produto">
       <input type="text" class="link" placeholder="link externo para venda">
       <div class="images_area"></div>
-      <input type="file" class="image" multiple required>
+      <input type="file" class="images" multiple required>
       <input type="text" class="description" placeholder="descrição do produto">
-    </div>
-    <div class="detail_input_area">
-      <span class="product_details"></span>
-      <input type="text" class="altura" placeholder="altura">
-      <input type="text" class="largura" placeholder="largura">
-      <input type="text" class="profundidade" placeholder="profundidade">
-      <input type="text" class="peso" placeholder="peso">
+      <input type="text" class="height" placeholder="altura">
+      <input type="text" class="width" placeholder="largura">
+      <input type="text" class="depth" placeholder="profundidade">
+      <input type="text" class="weight" placeholder="peso">
+      <input type="text" class="volume" placeholder="volume">
       <span>tamanhos</span>
       <div class="sizes">
         <div class="size_pp">
-          <label for="">PP</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_pp">PP</label>
+          <input id="edit_size_pp" name="pp" type="checkbox" class="tamanho">
         </div>
         <div class="size_p">
-          <label for="">P</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_p">P</label>
+          <input id="edit_size_p" name="p" type="checkbox" class="tamanho">
         </div>
         <div class="size_m">
-          <label for="">M</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_m">M</label>
+          <input id="edit_size_m" name="m" type="checkbox" class="tamanho">
         </div>
         <div class="size_g">
-          <label for="">G</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_g">G</label>
+          <input id="edit_size_g" name="g" type="checkbox" class="tamanho">
         </div>
         <div class="size_gg">
-          <label for="">GG</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_gg">GG</label>
+          <input id="edit_size_gg" name="gg" type="checkbox" class="tamanho">
         </div>
         <div class="size_xg">
-          <label for="">XG</label>
-          <input type="checkbox" class="tamanho">
+          <label for="edit_size_xg">XG</label>
+          <input id="edit_size_xg" name="xg" type="checkbox" class="tamanho">
         </div>
       </div>
       <span>modelos</span>
-      <input type="text" class="modelo">
-      <img id="add_model" src="src/assets/icons/plus.svg" class="icon">
+      <img id="edit_model" src="src/assets/icons/plus.svg" class="icon">
     </div>
     <div class="button_area">
       <button class="edit_button">confirmar</button>

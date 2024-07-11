@@ -54,15 +54,21 @@ Firestore.fetch = async (collectionName) => {
 Firestore.update = async (collectionName, docId, newData) => {
   try {
     const collectionRef = collection(db, collectionName);
-    const documentRef = await getDoc(collectionRef, docId);
-    const data = documentRef.data();
-    for (const key in newData) {
-      if (newData.hasOwnProperty(key) && newData[key]) {
-        data[key = newData[key]];
+    const documentRef = doc(collectionRef, docId);
+    const snapshot = await getDoc(documentRef);
+
+    if (snapshot.exists()) {
+      const data = snapshot.data();
+      for (const key in newData) {
+        if (newData.hasOwnProperty(key) && newData[key]) {
+          data[key] = newData[key];
+        }
       }
+      await setDoc(documentRef, data);
+      return documentRef;
+    } else {
+      return "Document does not exist";
     }
-    await setDoc(documentRef, data)
-    return documentRef;
   } catch (error) {
     return firebaseErrorMessage[error.message] || error.message;
   }

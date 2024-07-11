@@ -74,8 +74,6 @@ async function send() {
   getModelValues();
 
   const productData = setObjectData();
-  console.log("productData", productData)
-
   await addProduct(productData);
 
   await addTypeIfNotExists(Add.attributes.type, Add.attributes.category);
@@ -92,10 +90,10 @@ async function getValues() {
     if (attribute === "images") {
       const productImages = Add.self.querySelector(`input.${attribute}`).files
       Add.attributes[attribute] = await Firestorage.uploadImages(productImages);
-      break;
+      continue;
     }
     if (attribute === "sizes" || attribute === "models") {
-      break;
+      continue;
     }
     Add.attributes[attribute] = Add.self.querySelector(`input.${attribute}`).value;
   }
@@ -179,7 +177,7 @@ function cleanAttributes() {
   for (const attribute in Add.attributes) {
     if (attribute == "sizes" || attribute == "models") {
       Add.attributes[attribute] = [];
-      break;
+      continue;
     }
     Add.attributes[attribute] = null;
   }
