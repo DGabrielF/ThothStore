@@ -41,12 +41,22 @@ Menu.load = () => {
 }
 
 function toggleTypes(event) {
-  const category = event.target;
+  const selectedCategory = event.target.textContent;
+  const categories = Menu.self.querySelectorAll(".category");
+  for (const category of categories) {
+    const categoryText = category.querySelector("button").textContent;
+    if (categoryText !== selectedCategory) {
+      const typeToHide = category.querySelector(".type");
+      if (!typeToHide.classList.contains("hide")) {
+        typeToHide.classList.add("hide");
+      }
+    }
+  }
   const parent = event.target.parentNode;
   const typeDiv = parent.querySelector(".type");
   if (typeDiv.classList.contains("hide")) {
     typeDiv.classList.remove("hide");
-    State.filter.category = category.textContent;
+    State.filter.category = selectedCategory;
   } else {
     typeDiv.classList.add("hide");
     State.filter.category = null;
