@@ -35,7 +35,21 @@ Firestore.checkIfExists = async (collectionName, data, criteria) => {
   }
 }
 
-//  TODO fetch e limitedFetch
+Firestore.fetch = async (collectionName) => {
+  try {
+    const collectionRef = collection(db, collectionName);
+    const snapshot = await getDocs(collectionRef);
+    const data = snapshot.docs.map( (doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }))
+    return data;
+  } catch (error) {
+    return firebaseErrorMessage[error.message];
+  }
+}
+
+//  TODO e limitedFetch
 
 Firestore.update = async (collectionName, docId, newData) => {
   try {

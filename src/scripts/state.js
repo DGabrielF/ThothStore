@@ -1,3 +1,5 @@
+import { Firestore } from "./firebase/firestore.js";
+
 export const State = {
   user: {
     auth: false
@@ -18,24 +20,7 @@ export const State = {
 }
 
 State.setData = async () => {
-  const data = await fetchData();
-  State.data.products = data.products;
-  State.data.types = data.types;
-  State.data.categories = data.categories;
-}
-
-async function fetchData() {
-  try {
-    let response = await fetch('src/assets/database/data.json');
-    
-     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    let data = await response.json();
-    
-    return data
-  } catch (error) {
-    console.error('Erro:', error);
-  }
+  State.data.products = await Firestore.fetch("products");
+  State.data.types = await Firestore.fetch("types");
+  State.data.categories = await Firestore.fetch("categories");
 }

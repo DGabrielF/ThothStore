@@ -12,7 +12,6 @@ Products.load = () => {
   Products.hideAllCards();
 
   const itemsToShow = applyFilters();
-  // console.log("itemsToShow", itemsToShow)
 
   for (const object of itemsToShow) {
     const foundInMemory = Products.memory.find(item => item === object);
@@ -23,11 +22,17 @@ Products.load = () => {
           foundProduct.classList.remove("hide")
         }
       } else {
-        Products.self.appendChild(Card.create(object));
+        const card = Card.create(object);
+        if (card) {
+          Products.self.appendChild(Card.create(object));
+        }
       }      
     } else {
       Products.memory.push(object);
-      Products.self.appendChild(Card.create(object));
+      const card = Card.create(object);
+      if (card) {
+        Products.self.appendChild(Card.create(object));
+      }
     }
   }
 }

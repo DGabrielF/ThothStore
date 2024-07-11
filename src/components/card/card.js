@@ -7,6 +7,8 @@ export const Card = {
 }
 
 Card.create = (item) => {
+  if (!item.name) return;
+  
   const card = document.createElement("div");
   card.id = item.id;
   card.classList.add("card");
@@ -37,11 +39,13 @@ Card.create = (item) => {
   name.classList.add("name");
   name.textContent = item.name;
   card.appendChild(name);
-
-  const image = document.createElement("img");
-  image.src = `src/assets/images/${item.image}.png`;
-  image.alt = item.name;
-  card.appendChild(image);
+  
+  if (item.images.length > 0) {
+    const image = document.createElement("img");
+    image.src = item.images[0];
+    image.alt = item.name;
+    card.appendChild(image);
+  }
   
   const buttonArea = document.createElement("div");
   buttonArea.classList.add("button_area");
