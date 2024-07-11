@@ -1,4 +1,4 @@
-import { getFirestore, doc, addDoc, getDoc, getDocs, setDoc, deleteDoc, collection, query, where, limit, startAfter, updateDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getFirestore, doc, addDoc, getDoc, getDocs, setDoc, deleteDoc, collection, query, where} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 import { app } from "./fireapp.js"
 import { firebaseErrorMessage } from './errors.js';
@@ -76,10 +76,14 @@ Firestore.update = async (collectionName, docId, newData) => {
 
 Firestore.delete = async (collectionName, docId) => {
   try {
-    const collectionRef = collection(db, collectionName);
-    const documentRef = await getDoc(collectionRef, docId);
-    await deleteDoc(documentRef);
-    return documentRef;
+    const documentRef = doc(db, collectionName, docId);
+    const snapshot = await getDoc(documentRef);
+    if (snapshot.exists()) {
+      await deleteDoc(documentRef);
+      return documentRef;
+    } else {
+      return "Document does not exist";
+    }
   } catch (error) {
     return firebaseErrorMessage[error.message] || error.message;
   }

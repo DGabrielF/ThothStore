@@ -124,7 +124,7 @@ async function addProduct(data) {
   if (typeof productResponse === "string") {
     console.error(productResponse);
   } else {
-    console.log(productResponse);
+    console.log("Produto adicionado com sucesso!");
   }
 }
 

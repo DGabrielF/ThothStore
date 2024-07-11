@@ -32,7 +32,7 @@ Card.create = (item) => {
   }
   remove.src = "src/assets/icons/trash.svg";
   remove.alt = "remover produto";
-  remove.addEventListener("click", async () => Card.remove(item.id))
+  remove.addEventListener("click", async () => Card.remove(item))
   card.appendChild(remove);
 
   const name = document.createElement("span");
@@ -89,18 +89,41 @@ function toggleDetail(event) {
   console.log(event.target, "detalhes")
 }
 
-Card.remove = async (productId) => {
-  console.log("abrir uma caixa de diálogo rápida para a exclusão do item")
-  console.log(`apresentar os dados do produto com o id ${productId} a serem excluídos`)
-  console.log("botão pra confirmar")
-  console.log("botão pra cancelar")
-  console.log("remover os dados do firestore")
-  const productResponse = await Firestore.delete("products", productId);
+Card.remove = async (product) => {
+  const body = document.querySelector("body");
 
-  if (typeof productResponse === "string") {
-    console.error(productResponse);
-  } else {
-    console.log(productResponse);
-  }
-  console.log("remover os dados do firestorage")
+  const div = document.createElement("div");
+  div.classList.add("confirm_delete_area")
+  body.appendChild(div);
+
+  const text = document.createElement("span");
+  text.textContent = `Você realmente deseja excluir ${product.name}?`;
+  div.appendChild(text);
+
+  const buttonArea = document.createElement("div");
+  buttonArea.classList.add("button_area");
+  div.appendChild(buttonArea);
+
+  const confirmButton = document.createElement("button");
+  confirmButton.textContent = "SIM";
+  confirmButton.disabled = false;
+  confirmButton.addEventListener("click", async () => {
+    confirmButton.disabled = true;
+    const productResponse = await Firestore.delete("products", product.id);  
+    if (typeof productResponse === "string") {
+      console.error(productResponse);
+      confirmButton.disabled = false;
+    } else {
+      console.log(productResponse);
+      div.remove()
+    }
+  })
+  buttonArea.appendChild(confirmButton);
+  
+  const cancelButton = document.createElement("button");
+  cancelButton.textContent = "NÃO"
+  cancelButton.addEventListener("click", () => {
+    div.remove()
+  })
+  buttonArea.appendChild(cancelButton);
 }
