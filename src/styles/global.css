@@ -1,3 +1,5 @@
+@import url("icon.css");
+
 @import url("../components/menu/menu.css");
 @import url("../components/products/products.css");
 @import url("../components/card/card.css");
@@ -69,6 +71,8 @@ body {
 .add_product {
   padding: 2px 2px 2px 5px;
 
+  border: 1px solid #00000055;
+  box-shadow: 0 0 2px #000000aa;
   border-radius: 30px;  
   background-color: #baff81;
 
@@ -82,10 +86,7 @@ body {
   right: 15px;
 }
 
-.icon {
-  width: 25px;
-  height: 25px;
-}
+
 
 *.hide {
   display: none;

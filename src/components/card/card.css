@@ -1,34 +1,39 @@
 .card {
-  min-width: 280px;
-  width: 280px;
-  min-height: 320px;
-  height: 320px;
+  margin: 2px;
+  min-width: 278px;
+  width: 278px;
+  min-height: 348px;
+  height: 348px;
 
-  border: 2px solid black;
-
+  border: 2px solid #00000055;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #00000055;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  position: relative;
+  
   overflow: hidden;
 }
 
-.card img.edit {
-  padding: 2px;
+.card:hover {
+  margin: 0px;
+  min-width: 280px;
+  width: 280px;
+  min-height: 350px;
+  height: 350px;
+}
 
-  border-radius: 50%;
+.card img.edit {
   background-color: #81bcff;
+  
   position: absolute;
   top: 15px;
   right: 5px;
 }
 
 .card img.remove {
-  padding: 2px;
-
-  border-radius: 50%;
   background-color: #ff8181;
 
   position: absolute;
@@ -38,11 +43,20 @@
 
 .card span.name {
   width: 100%;
+  height: 40px;
 
   text-align: center;
-  font-weight: 400;
+  text-transform: capitalize;
+  font-weight: 900;
 
-  border: 2px solid black;
+  border-bottom: 1px solid #00000055;
+  box-shadow: 0 0 2px #000000aa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 }
 
 .card img {
@@ -52,18 +66,40 @@
 
 .button_area {
   width: 100%;
+  height: 30px;
+
+  border-top: 1px solid #00000055;
+  box-shadow: 0 0 2px #000000aa;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2px;
+  justify-content: space-evenly;
 }
 
 .button_area button {
-  width: 98%;
+  width: 47%;
+  height: 24px;
+
+  text-transform: uppercase;
+  font-weight: 600;
+
+  box-shadow: 0 0 2px #000000aa;
+  border: 0 solid black;
+  background-color: transparent;
+
+  cursor: pointer;
 }
 
 .confirm_delete_area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.detail_area {
   position: absolute;
   top: 50%;
   left: 50%;

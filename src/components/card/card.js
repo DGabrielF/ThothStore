@@ -13,6 +13,11 @@ Card.create = (item) => {
   card.id = item.id;
   card.classList.add("card");
 
+  const name = document.createElement("span");
+  name.classList.add("name");
+  name.textContent = item.name;
+  card.appendChild(name);
+
   const edit = document.createElement("img");
   edit.classList.add("edit");
   edit.classList.add("icon");
@@ -22,7 +27,7 @@ Card.create = (item) => {
   edit.src = "src/assets/icons/edit.svg";
   edit.alt = "editar produto";
   edit.addEventListener("click", async () => Edit.open(item))
-  card.appendChild(edit);
+  name.appendChild(edit);
 
   const remove = document.createElement("img");
   remove.classList.add("remove");
@@ -33,13 +38,8 @@ Card.create = (item) => {
   remove.src = "src/assets/icons/trash.svg";
   remove.alt = "remover produto";
   remove.addEventListener("click", async () => Card.remove(item))
-  card.appendChild(remove);
+  name.appendChild(remove);
 
-  const name = document.createElement("span");
-  name.classList.add("name");
-  name.textContent = item.name;
-  card.appendChild(name);
-  
   if (item.images.length > 0) {
     const image = document.createElement("img");
     image.src = item.images[0];
