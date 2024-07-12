@@ -18,11 +18,13 @@
 }
 
 .card:hover {
-  margin: 0px;
+  margin: 1px;
   min-width: 280px;
   width: 280px;
   min-height: 350px;
   height: 350px;
+
+  transition: ease 0.1s;
 }
 
 .card img.edit {
