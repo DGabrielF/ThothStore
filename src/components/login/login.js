@@ -11,8 +11,12 @@ export const Login = {
 };
 
 Login.load = () => {
-  const loginButton = document.querySelector("button.login");
-  loginButton.addEventListener("click", Login.open);
+  document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key === 'L') {
+        event.preventDefault();
+        Login.open();
+    }
+  });
 
   const closeButton = Login.self.querySelector("button.close");
   closeButton.addEventListener("click", Login.close);

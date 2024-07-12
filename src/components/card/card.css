@@ -16,7 +16,6 @@
   
   overflow: hidden;
 }
-
 .card:hover {
   margin: 1px;
   min-width: 280px;
@@ -65,6 +64,10 @@
   max-width: 274px;
   max-height: 274px;
 }
+.card:hover img {
+  max-width: 276px;
+  max-height: 276px;
+}
 
 .button_area {
   width: 100%;
@@ -94,14 +97,6 @@
 }
 
 .confirm_delete_area {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-.detail_area {
   position: absolute;
   top: 50%;
   left: 50%;

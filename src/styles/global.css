@@ -3,6 +3,7 @@
 @import url("../components/menu/menu.css");
 @import url("../components/products/products.css");
 @import url("../components/card/card.css");
+@import url("../components/detail/detail.css");
 @import url("../components/login/login.css");
 @import url("../components/fade/fade.css");
 @import url("../components/add/add.css");
@@ -12,6 +13,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* user-select: none; */
 }
 
 body {
