@@ -16,8 +16,6 @@ async function init() {
 
   Add.load();
   Edit.load();
-
-  // document.body.addEventListener("click", () => console.log(State))
 }
 
-init();
+await init();

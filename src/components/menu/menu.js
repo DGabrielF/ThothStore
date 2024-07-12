@@ -8,6 +8,7 @@ export const Menu = {
 }
 
 Menu.load = () => {
+  console.log(State.data.categories)
   for (const category of State.data.categories) {
     const categoryDiv = document.createElement("div");
     categoryDiv.classList.add("category");
