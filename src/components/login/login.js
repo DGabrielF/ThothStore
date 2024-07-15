@@ -18,6 +18,24 @@ Login.load = () => {
     }
   });
 
+  let touchCount = 0;
+  let touchTimeout;
+
+  const secretArea = document.querySelector("div.banner");
+  secretArea.addEventListener('touchstart', () => {
+    touchCount++;
+    if (touchCount === 3) {
+        clearTimeout(touchTimeout);
+        touchCount = 0;
+        Login.open();
+    } else {
+        clearTimeout(touchTimeout);
+        touchTimeout = setTimeout(() => {
+            touchCount = 0;
+        }, 500);
+    }
+});
+
   const closeButton = Login.self.querySelector("button.close");
   closeButton.addEventListener("click", Login.close);
 
@@ -55,9 +73,6 @@ Login.enter = async () => {
 
     const addProductButton = document.querySelector("div.add_product");
     addProductButton.classList.remove("hide");
-    
-    const loginButton = document.querySelector("button.login");
-    loginButton.classList.add("hide");
 
     State.user.auth = true;
     

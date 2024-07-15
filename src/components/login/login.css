@@ -19,3 +19,13 @@
   z-index: 2;
 }
 
+.login_box .button_area {
+  border-top: 0px;
+  box-shadow: 0 0 0 #000000aa;
+}
+
+@media only screen and (max-width: 449px) {
+  .login_box {
+    width: 90vw;
+  }
+}
