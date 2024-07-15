@@ -3,11 +3,17 @@ import { Products } from "../products/products.js";
 
 export const Menu = {
   self: document.querySelector("div.menu"),
+  toggleButton: document.querySelector(".menu_icon"),
   load: () => {},
   toggleTypes: () => {},
 }
 
 Menu.load = () => {
+  Menu.toggleButton.addEventListener("click", () => {
+    Menu.self.classList.add("show");
+    Menu.toggleButton.classList.add("hide");
+  })
+
   for (const category of State.data.categories) {
     const categoryDiv = document.createElement("div");
     categoryDiv.classList.add("category");
@@ -73,6 +79,10 @@ function filterContent(event) {
   } else {
     State.filter.type = type.textContent;
     State.filter.category = category.textContent;
+    if (Menu.self.classList.contains("show")) {
+      Menu.self.classList.remove("show")
+      Menu.toggleButton.classList.remove("hide")
+    }
   }
   State.filter.type = (State.filter.type === type.textContent) ? null : type.textContent;
   Products.load()

@@ -13,6 +13,20 @@
   gap: 2px;
 }
 
+.menu_icon {
+  padding: 2px;
+  width: 25px;
+  height: 25px;
+
+  display: none;
+
+  position: absolute;
+  top: calc(15vh - 35px);
+  left: 10px;
+
+  cursor: pointer;
+}
+
 .category {
   padding: 2px;
   width: 100%;
@@ -64,4 +78,27 @@
   outline: none; 
 
   cursor: pointer;
+}
+
+@media only screen and (max-width: 449px) {
+  .menu_icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    width: 100%;
+
+    border-right: 0px;
+    border-bottom: 2px solid black;
+
+    display: flex;
+
+    position: absolute;
+    top: 15vh;
+    z-index: 2;
+  }
 }
