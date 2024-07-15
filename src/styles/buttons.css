@@ -1,0 +1,19 @@
+.buy {
+  background-color: #4CAF50;
+}
+.buy:hover {
+  background-color: #45A049;
+}
+.buy:disabled {
+  background-color: #A5D6A7;
+}
+
+.detail {
+  background-color: #81bcff;
+}
+.detail:hover {
+  background-color: #6aadf8;
+}
+.detail:disabled {
+  background-color: #add1fa;
+}

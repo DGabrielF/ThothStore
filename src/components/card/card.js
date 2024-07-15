@@ -105,6 +105,7 @@ function loadButtonArea(item) {
   buttonArea.appendChild(buyButton);
 
   const detailButton = document.createElement("button");
+  detailButton.classList.add("detail")
   detailButton.addEventListener("click", event => {
     const card = event.target.closest(".card") 
     const detailArea = Detail.open(item);  

@@ -36,7 +36,6 @@
 
   border-radius: 15px;
   box-shadow: 0 0 5px #000000aa;
-  background-color: #81bcff;
 
   position: absolute;  
   bottom: 8px;
@@ -77,6 +76,7 @@
 }
 
 .detail_area .images_area .image_detail {
+  margin: 2px;
   width: 100%;
   height: 100%;
 
@@ -103,9 +103,13 @@
 }
 
 .detail_area .details {
-  padding: 3px;
+  padding: 8px;
   width: 40%;
-  height: 98%;
+  height: 100%;
+
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #F5F5F5;
   
   display: flex;
   flex-direction: column;
@@ -176,4 +180,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 449px) {
+  .detail_area {
+    flex-direction: column-reverse;
+  }
+
+  .detail_area .images_area {
+    width: 100%;
+  }
+
+  .detail_area .details {
+    width: 98%;
+  }
 }

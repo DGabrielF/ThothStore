@@ -8,6 +8,7 @@
   border: 2px solid #00000055;
   border-radius: 5px;
   box-shadow: 0 0 2px #00000055;
+  background-color: #FFFFFF;
   
   display: flex;
   flex-direction: column;
@@ -91,7 +92,6 @@
 
   box-shadow: 0 0 2px #000000aa;
   border: 0 solid black;
-  background-color: transparent;
 
   cursor: pointer;
 }
