@@ -17,3 +17,13 @@
 .detail:disabled {
   background-color: #add1fa;
 }
+
+.button_area {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}

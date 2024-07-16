@@ -27,6 +27,18 @@
   cursor: pointer;
 }
 
+.close_menu_icon {
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  top: calc(15vh - 35px);
+  right: 10px;
+
+  cursor: pointer;
+}
+
 .category {
   padding: 2px;
   width: 100%;

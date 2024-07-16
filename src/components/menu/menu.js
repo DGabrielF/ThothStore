@@ -3,15 +3,23 @@ import { Products } from "../products/products.js";
 
 export const Menu = {
   self: document.querySelector("div.menu"),
-  toggleButton: document.querySelector(".menu_icon"),
+  openButton: document.querySelector(".menu_icon"),
+  closeButton: document.querySelector(".close_menu_icon"),
   load: () => {},
   toggleTypes: () => {},
 }
 
 Menu.load = () => {
-  Menu.toggleButton.addEventListener("click", () => {
+  Menu.openButton.addEventListener("click", () => {
     Menu.self.classList.add("show");
-    Menu.toggleButton.classList.add("hide");
+    Menu.openButton.classList.add("hide");
+    Menu.closeButton.classList.remove("hide");
+  })
+  
+  Menu.closeButton.addEventListener("click", () => {
+    Menu.self.classList.remove("show");
+    Menu.openButton.classList.remove("hide");
+    Menu.closeButton.classList.add("hide");
   })
 
   for (const category of State.data.categories) {
@@ -81,7 +89,7 @@ function filterContent(event) {
     State.filter.category = category.textContent;
     if (Menu.self.classList.contains("show")) {
       Menu.self.classList.remove("show")
-      Menu.toggleButton.classList.remove("hide")
+      Menu.openButton.classList.remove("hide")
     }
   }
   State.filter.type = (State.filter.type === type.textContent) ? null : type.textContent;
