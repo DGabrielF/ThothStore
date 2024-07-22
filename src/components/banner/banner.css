@@ -1,0 +1,16 @@
+.banner {
+  background-image: url("../../assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-family: "GaMaamli";
+  color: #ffff00;
+  -webkit-text-stroke: 1px rgb(65, 64, 51);
+  text-shadow: 0 0 3px #ffff00;
+}
