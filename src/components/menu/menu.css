@@ -1,10 +1,11 @@
 .menu {
-  padding: 2px;
+  padding: 4px 2px;
   width: 140px;
   height: 100%;
 
-  border-right: 2px solid #00000022;
-  background-color: #CFD8DC;
+  border-right: 2px solid #00000077;
+  background-color: #ea9038;
+  background: linear-gradient(to bottom, #ea9038ee, #ea9038aa, #ea9038ee);
 
   display: flex;
   flex-direction: column;
@@ -44,11 +45,15 @@
   width: 100%;
 
   border-radius: 15px;
-  background-color: #00000022;
+  background-color: #b04813aa;
 
   cursor: pointer;
 }
-.category>button {
+.category:hover {
+  background-color: #b04813ee;
+}
+
+.category > button {
   padding: 2px;
   margin: 0;
   width: 100%;
@@ -56,6 +61,9 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  color: #ffff00;
+  /* -webkit-text-stroke: 1px rgb(65, 64, 51); */
+  text-shadow: 0 0 4px #000000;
   
   border: none;
   border-radius: 15px;
@@ -82,14 +90,20 @@
   
   text-align: center;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
+  color: #000000;
+  -webkit-text-stroke: 0.25px #414033;
+  text-shadow: 0 0 5px #ffff00;
   
   border: none;
   border-radius: 15px;
-  background-color: #00000022;
+  background-color: #fdcd5f77;
   outline: none; 
 
   cursor: pointer;
+}
+.type>button:hover {
+  background-color: #fdcd5faa;
 }
 
 @media only screen and (max-width: 449px) {

@@ -5,10 +5,10 @@
   min-height: 348px;
   height: 348px;
 
-  border: 2px solid #00000055;
+  border: 2px solid #4b260177;
   border-radius: 5px;
   box-shadow: 0 0 2px #00000055;
-  background-color: #FFFFFF;
+  background-color: #ffc056aa;
   
   display: flex;
   flex-direction: column;
@@ -64,6 +64,7 @@
 .card img {
   max-width: 274px;
   max-height: 274px;
+  border-radius: 5px;
 }
 .card:hover img {
   max-width: 276px;

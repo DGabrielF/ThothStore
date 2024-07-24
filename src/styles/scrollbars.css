@@ -3,16 +3,16 @@
   height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #00000022;
+  background-color: #ea903822;
   outline: 1px solid #FFFFFF;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #37474F;
+  background-color: #ea9038aa;
   border-radius: 8px;
-  border: 2px solid #ffffff;
+  border: 2px solid #ea9038;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #5b7785;
-  border: 2px solid #aaaaaa;
+  background-color: #ea9038;
+  border: 2px solid #ea9038;
 }

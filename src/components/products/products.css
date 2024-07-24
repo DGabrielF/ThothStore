@@ -2,6 +2,8 @@
   width: 98%;
   height: 100%;
 
+  background: linear-gradient(45deg, #f9b33966, #f9b33944, #f9b33922, #f9b33944, #f9b33966);
+
   display: flex;
   flex-direction: column;
   align-items: center;
