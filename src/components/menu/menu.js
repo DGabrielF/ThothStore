@@ -75,6 +75,7 @@ function toggleTypes(event) {
     typeDiv.classList.add("hide");
     State.filter.category = null;
   }
+  State.filter.type = null;
   Products.load();
 }
 
@@ -92,6 +93,5 @@ function filterContent(event) {
       Menu.openButton.classList.remove("hide")
     }
   }
-  State.filter.type = (State.filter.type === type.textContent) ? null : type.textContent;
   Products.load()
 }
